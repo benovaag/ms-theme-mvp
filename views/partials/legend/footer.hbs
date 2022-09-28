@@ -1,0 +1,114 @@
+<footer class="legend-footer-contact-container header--custom-background">
+  <div class="legend-footer-contact">
+    <div class="legend-footer-contact-logo header--custom-text">
+      <div>
+        {{#if logo}}
+        <a class="nav-legend-header__logo" href="/" id="logo-wrapper">
+          <span class="nav-header__title-hidden">{{name}}</span>
+          <img class="nav-header__image" src="{{logo}}" alt="{{name}}" itemprop="logo" />
+        </a>
+        {{else}}
+        <h3 class="nav-footer-contact-title header--custom-text">
+          <a href="/">{{name}}</a>
+        </h3>
+        {{/if}}
+      </div>
+      <div class="legend-footer__brand-col header--custom-text">
+        {{#if logoCaption}}
+        <p class="legend-footer__logo-caption">{{{logoCaption}}}</p>
+        {{/if}}
+      </div>
+    </div>
+    <div class="nav-bounds nav-bounds--contact">
+      <div>
+        <div class="legend-footer__social-media">
+          {{#each socialNetworks}}
+          <a href="{{url}}" target="_blank" class="header--custom-svg header--svg" rel="noopener noreferrer nofollow">
+            {{> (concat 'legend/views/partials/icons/' (lookup . 'name'))}}
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      <div class="legend-footer__contact-col legend-list--spacing">
+        <ul class="legend-footer__contact header--custom-border"></ul>
+        {{#if showPhone}}
+        <li>
+          <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
+            <span>{{phone.formatted}}</span>
+          </a>
+        </li>
+        {{/if}}
+        {{#if showEmail}}
+        <li>
+          <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">
+            <span>{{email}}</span>
+          </a>
+        </li>
+        {{/if}}
+        {{#if address}}
+        <li>
+          <a class="header--custom-text" itemprop="streetAddress">
+            <span>{{address.address}}</span>
+          </a>
+        </li>
+        {{/if}}
+        <li class="legend-list--spacing">
+          <a class="legend-list--contact header--custom-text" href="{{contact.href}}" class="contact-button" rel="nofollow">
+            {{> legend/views/partials/contact}} <span>{{contact.label}}</span>
+          </a>
+        </li>
+        {{#if showQrData}}
+        {{#with fiscalData}}
+        <li class="legend-list--spacing">
+          <a href={{qr_link}} target="_F960AFIPInfo">
+            <img src={{qr_img}} alt="Data fiscal" />
+          </a>
+        </li>
+        {{/with}}
+        {{/if}}
+        <meta itemprop="contactType" content="customer service" />
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="menuFooterIndex wrapper">
+    <div class="dropdown header--custom-border">
+      <div class="dropdown-title header--custom-text">
+        <span>{{dropdown_title_text}}</span>
+        {{> legend/views/partials/icons/dropdown}}
+      </div>
+      <div class="legend-footer__categories-col dropdown-content">
+        {{#each menu}}
+        <span class="legend-footer__category header--custom-text">
+          <a href="{{url}}" data-id="{{id}}" class="header--custom-text">
+            {{name}}
+          </a>
+        </span>
+        {{/each}}
+      </div>
+      <div class="footer-help">
+        {{#if linkToLGPD}}
+        <a href="{{linkToLGPD.href}}" class="header--custom-text">{{linkToLGPD.label}}</a>
+        <span class="legend-footer-help__separator header--custom-text"> | </span>
+        {{/if}}
+        <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
+        {{#if showBusinessData}}
+        {{#with fiscalData}}
+        <div class="nav-footer-fiscal-data header--custom-text">
+          <p class="nav-footer-fiscal-data__name">{{legal_name}}</p>
+          <p class="nav-footer-fiscal-data__id">{{legal_doc}}</p>
+        </div>
+        {{/with}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="legend-footer-info header--custom-background">
+  <div class="nav-footer__icons_generals">
+    <a href="{{{linkToMShopsLandingPage}}}" target="_blank" class="legend-footer-info__brand header--custom-text">
+      <span class="footer-power-by">{{i18n.powered_by}}</span>
+      {{> legend/views/partials/icons/mshops}}
+    </a>
+  </div>
+</div>
