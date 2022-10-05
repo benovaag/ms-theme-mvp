@@ -20,7 +20,91 @@
       </div>
     </div>
     <div class="nav-bounds nav-bounds--contact">
-      <div>
+      <div class="legend-footer__contact-col legend-list--spacing">
+        <h3 class="legend-footer__title">Institucional</h3>
+        <ul class="legend-footer__contact header--custom-border ">
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Quem Somos</span>
+            </a>
+          </li>
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Políticas da Empresa</span>
+            </a>
+          </li>
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Políticas de Privacidade</span>
+            </a>
+          </li>
+        </ul>
+        <div class="footer-arrow__mobile">{{> legend/views/partials/icons/arrow}}</div>
+      </div>
+    </div>
+    <div class="nav-bounds nav-bounds--contact">
+      <div class="legend-footer__contact-col legend-list--spacing">
+        <h3 class="legend-footer__title">Minha Conta</h3>
+        <ul class="legend-footer__contact header--custom-border">
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Login</span>
+            </a>
+          </li>
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Conta</span>
+            </a>
+          </li>
+          <li>
+            <a class="header--custom-text" href="#">
+              <span>Meus Pedidos</span>
+            </a>
+          </li>
+        </ul>
+        <div class="footer-arrow__mobile">{{> legend/views/partials/icons/arrow}}</div>
+      </div>
+    </div>
+    <div class="nav-bounds nav-bounds--contact">
+      <div class="legend-footer__contact-col legend-list--spacing">
+        <h3 class="legend-footer__title">Fale Conosco</h3>
+        <ul class="legend-footer__contact header--custom-border talk-to__flex">
+          <li>
+              {{> legend/views/partials/icons/clock}}
+              <span class="header--custom-text">Segunda à Sexta das 8h às 18h. <br> Sábado das 8h às 13h</span>
+          </li>
+          {{#if showEmail}}
+          <li>
+            <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">
+              {{> legend/views/partials/icons/email}}
+              <span>{{email}}</span>
+            </a>
+          </li>
+          {{/if}}
+          {{#if showPhone}}
+          <li>
+            <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
+              {{> legend/views/partials/icons/phone}}
+              <span>{{phone.formatted}}</span>
+            </a>
+          </li>
+          {{/if}}
+          {{#if showPhone}}
+          <li>
+            <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
+              {{> legend/views/partials/icons/whatsapp}}
+              <span>{{phone.formatted}}</span>
+            </a>
+          </li>
+          {{/if}}
+          
+          {{#if address}}
+          <li>
+              <span class="header--custom-text">{{address.address}}</span>
+          </li>
+          {{/if}}
+        </ul>
+        <div>
         <div class="legend-footer__social-media">
           {{#each socialNetworks}}
           <a href="{{url}}" target="_blank" class="header--custom-svg header--svg" rel="noopener noreferrer nofollow">
@@ -29,82 +113,69 @@
           {{/each}}
         </div>
       </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="menuFooterIndex wrapper legend-footer-contact second-footer__info">
       <div class="legend-footer__contact-col legend-list--spacing">
-        <ul class="legend-footer__contact header--custom-border"></ul>
-        {{#if showPhone}}
-        <li>
-          <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
-            <span>{{phone.formatted}}</span>
-          </a>
-        </li>
-        {{/if}}
-        {{#if showEmail}}
-        <li>
-          <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">
-            <span>{{email}}</span>
-          </a>
-        </li>
-        {{/if}}
-        {{#if address}}
-        <li>
-          <a class="header--custom-text" itemprop="streetAddress">
-            <span>{{address.address}}</span>
-          </a>
-        </li>
-        {{/if}}
-        <li class="legend-list--spacing">
-          <a class="legend-list--contact header--custom-text" href="{{contact.href}}" class="contact-button" rel="nofollow">
-            {{> legend/views/partials/contact}} <span>{{contact.label}}</span>
-          </a>
-        </li>
-        {{#if showQrData}}
-        {{#with fiscalData}}
-        <li class="legend-list--spacing">
-          <a href={{qr_link}} target="_F960AFIPInfo">
-            <img src={{qr_img}} alt="Data fiscal" />
-          </a>
-        </li>
-        {{/with}}
-        {{/if}}
-        <meta itemprop="contactType" content="customer service" />
+        <h3 class="legend-footer__title">Formas de Pagamento</h3>
+        <ul class="legend-footer__payment">
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/2K5DxkN.png" alt="">
+          </li>
+          
         </ul>
       </div>
-    </div>
-  </div>
-  <div class="menuFooterIndex wrapper">
-    <div class="dropdown header--custom-border">
-      <div class="dropdown-title header--custom-text">
-        <span>{{dropdown_title_text}}</span>
-        {{> legend/views/partials/icons/dropdown}}
+      <div class="legend-footer__contact-col legend-list--spacing">
+        <h3 class="legend-footer__title">Segurança</h3>
+        <ul class="legend-footer__payment">
+          <li>
+            <img src="https://i.imgur.com/0X6TlIf.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/0X6TlIf.png" alt="">
+          </li>
+          <li>
+            <img src="https://i.imgur.com/0X6TlIf.png" alt="">
+          </li>
+        </ul>
       </div>
-      <div class="legend-footer__categories-col dropdown-content">
-        {{#each menu}}
-        <span class="legend-footer__category header--custom-text">
-          <a href="{{url}}" data-id="{{id}}" class="header--custom-text">
-            {{name}}
-          </a>
-        </span>
-        {{/each}}
-      </div>
-      <div class="footer-help">
-        {{#if linkToLGPD}}
-        <a href="{{linkToLGPD.href}}" class="header--custom-text">{{linkToLGPD.label}}</a>
-        <span class="legend-footer-help__separator header--custom-text"> | </span>
-        {{/if}}
-        <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
-        {{#if showBusinessData}}
-        {{#with fiscalData}}
-        <div class="nav-footer-fiscal-data header--custom-text">
-          <p class="nav-footer-fiscal-data__name">{{legal_name}}</p>
-          <p class="nav-footer-fiscal-data__id">{{legal_doc}}</p>
-        </div>
-        {{/with}}
-        {{/if}}
-      </div>
-    </div>
   </div>
 </footer>
 <div class="legend-footer-info header--custom-background">
+  <div class="footer-help">
+    {{#if showBusinessData}}
+    {{#with fiscalData}}
+      <div class="nav-footer-fiscal-data header--custom-text">
+        <p class="nav-footer-fiscal-data__name">{{legal_name}}</p>
+        <p class="nav-footer-fiscal-data__id">{{legal_doc}}</p>
+      </div>
+    {{/with}}
+    {{/if}}
+  </div>
   <div class="nav-footer__icons_generals">
     <a href="{{{linkToMShopsLandingPage}}}" target="_blank" class="legend-footer-info__brand header--custom-text">
       <span class="footer-power-by">{{i18n.powered_by}}</span>
@@ -112,3 +183,6 @@
     </a>
   </div>
 </div>
+
+
+{{> scripts}}
