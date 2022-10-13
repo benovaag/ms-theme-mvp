@@ -63,21 +63,22 @@
 
     <div class="nav-default-header__bounds categories-container">
       <ul class="categories-items">
-        <li class="category-items__item">
-          <a class="category-items__link" href="#">Teste</a>
-        </li>
-        <li class="category-items__item">
-          <a class="category-items__link" href="#">Teste</a>
-        </li>
-        <li class="category-items__item">
-          <a class="category-items__link" href="#">Teste</a>
-        </li>
-        <li class="category-items__item">
-          <a class="category-items__link" href="#">Teste</a>
-        </li>
-        <li class="category-items__item">
-          <a class="category-items__link" href="#">Teste</a>
-        </li>
+        {{#each menu}}
+          
+          <li class="category-items__item">
+            <a class="category-items__link" href="{{this.url}}">{{this.name}}</a>
+
+          {{#if this.nodes}}
+            <ul class="category-items__child">
+            {{#each this.nodes}}
+              <li class="category-item">
+                <a href="{{this.url}}" class="category-item__link">{{this.name}}</a>
+              </li>
+            {{/each}}
+            </ul>
+          {{/if}}
+          </li>
+        {{/each}}
       </ul>
     </div>
   </header>

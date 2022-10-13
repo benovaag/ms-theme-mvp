@@ -1027,6 +1027,8 @@ body {
     .nav-default-header__bounds.categories-container .category-items__item {
         float: left;
         margin: 0 20px;
+        padding: 20px 0;
+        cursor: pointer;
     }
 
 .nav-default-header__bounds.categories-container .category-items__item .category-items__link {
@@ -3507,3 +3509,27 @@ main#root-app .ui-pdp-header .ui-pdp-title {
 .ui-vpp-merch-ecosystem-container+.ui-vip-content-right {
     display: none
 }
+
+/* Header Benova */
+.category-items__child{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: all ease-in-out .3s;
+}
+
+.category-item__link{
+    color: #000;
+}
+
+.category-items__item:hover .category-items__child{
+    opacity: 1;
+    max-height: 1000px;
+}
+/* Fim Header Benova */
